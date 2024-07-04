@@ -9,7 +9,7 @@ resource "google_compute_network" "net_instance1" {
 
 resource "google_compute_subnetwork" "subnet_instance1" {
   name          = "subnet"
-  ip_cidr_range = "10.40.0.0/24"
+  ip_cidr_range = "10.0.0.0/16"
   region        = "us-central1"
   network       = google_compute_network.net_instance1.self_link
 }
@@ -18,10 +18,9 @@ resource "google_compute_global_address" "reserved_peering_range" {
   project       = var.project_id
   name          = "reserved-peering-range"
   address_type  = "INTERNAL"
-  prefix_length = 24
+  prefix_length = 16
   purpose       = "VPC_PEERING"
   network       = google_compute_network.net_instance1.name
-  address       = "10.41.0.0"
 }
 
 resource "google_service_networking_connection" "tf_network" {

@@ -38,3 +38,4 @@ terraform.rc
 
 # Current Project
 /ssh_keys
+backend.conf
