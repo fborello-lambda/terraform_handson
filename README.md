@@ -16,7 +16,7 @@ Core concepts are put into practice, such as subnetworks, VPCs and even the way 
 
 # How
 
-1.First of all, create a GCP project, then define the `project_id` variable inside a file named `terraform.tfvars`:
+1. First of all, create a GCP project, then define the `project_id` variable inside a file named `terraform.tfvars`:
 
 ```hcl
 project_id = "project_name"
